@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace ShoppingSystem
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Cart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Btn_Generate_Bill_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/OrderForm.aspx");
         }
     }
 }

@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataProvider\InventoryDataProvider.xml" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -74,33 +75,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cart.aspx" />
-    <Content Include="Inventory.aspx" />
-    <Content Include="Purchase.aspx" />
+    <Content Include="CartForm.aspx" />
+    <Content Include="InventoryForm.aspx" />
+    <Content Include="OrderForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cart.aspx.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
+    <Compile Include="CartForm.aspx.cs">
+      <DependentUpon>CartForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cart.aspx.designer.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
+    <Compile Include="CartForm.aspx.designer.cs">
+      <DependentUpon>CartForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.aspx.cs">
-      <DependentUpon>Inventory.aspx</DependentUpon>
+    <Compile Include="InventoryForm.aspx.cs">
+      <DependentUpon>InventoryForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Inventory.aspx.designer.cs">
-      <DependentUpon>Inventory.aspx</DependentUpon>
+    <Compile Include="InventoryForm.aspx.designer.cs">
+      <DependentUpon>InventoryForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Purchase.aspx.cs">
-      <DependentUpon>Purchase.aspx</DependentUpon>
+    <Compile Include="OrderForm.aspx.cs">
+      <DependentUpon>OrderForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Purchase.aspx.designer.cs">
-      <DependentUpon>Purchase.aspx</DependentUpon>
+    <Compile Include="OrderForm.aspx.designer.cs">
+      <DependentUpon>OrderForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

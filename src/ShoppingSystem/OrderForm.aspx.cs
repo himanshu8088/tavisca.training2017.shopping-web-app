@@ -13,5 +13,10 @@ namespace ShoppingSystem
         {
 
         }
+
+        protected void Btn_Order_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert(\"Bhago\")</script>");
+        }
     }
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bookstore>
+  <book ISBN="10-000000-001"
+      Title="The Iliad and The Odyssey"
+      Price="12.95"
+      Quantity_Available="5"> 
+  </book>
+  <book ISBN="10-000000-999"
+       Title="Anthology of World Literature"
+       Price="24.95"
+       Quantity_Available="15">   
+  </book>
+  <book ISBN="11-000000-002"
+      Title="Computer Dictionary"
+      Price="24.95"
+      Quantity_Available="0">  
+  </book>
+  <book ISBN="11-000000-003"
+      Title="Cooking on a Budget"
+      Price="23.95"
+      Quantity_Available="1">    
+  </book>
+  <book ISBN="11-000000-004"
+      Title="Great Works of Art"
+      Price="29.95" 
+      Quantity_Available="4">
+  </book>
+</bookstore>
