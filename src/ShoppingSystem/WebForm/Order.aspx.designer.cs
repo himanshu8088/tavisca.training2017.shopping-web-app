@@ -10,16 +10,16 @@
 namespace ShoppingSystem {
     
     
-    public partial class Inventory {
+    public partial class Order {
         
         /// <summary>
-        /// inventoryForm control.
+        /// orderForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm inventoryForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm orderForm;
         
         /// <summary>
         /// Lbl_header control.
@@ -31,30 +31,57 @@ namespace ShoppingSystem {
         protected global::System.Web.UI.WebControls.Label Lbl_header;
         
         /// <summary>
-        /// XmlDataSource control.
+        /// Lbl_OrderNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource;
+        protected global::System.Web.UI.WebControls.Label Lbl_OrderNo;
         
         /// <summary>
-        /// GridView control.
+        /// Lbl_ShopperId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
+        protected global::System.Web.UI.WebControls.Label Lbl_ShopperId;
         
         /// <summary>
-        /// Btn_Add_To_Cart control.
+        /// Lbl_ItemCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Add_To_Cart;
+        protected global::System.Web.UI.WebControls.Label Lbl_ItemCount;
+        
+        /// <summary>
+        /// Lbl_OrderDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_OrderDate;
+        
+        /// <summary>
+        /// Lbl_Amount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_Amount;
+        
+        /// <summary>
+        /// Btn_Order control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Order;
     }
 }

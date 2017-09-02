@@ -31,13 +31,13 @@ namespace ShoppingSystem {
         protected global::System.Web.UI.WebControls.Label Lbl_header;
         
         /// <summary>
-        /// Lbl_Cart_Info control.
+        /// GridView_Cart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Cart_Info;
+        protected global::System.Web.UI.WebControls.GridView GridView_Cart;
         
         /// <summary>
         /// Btn_Generate_Bill control.

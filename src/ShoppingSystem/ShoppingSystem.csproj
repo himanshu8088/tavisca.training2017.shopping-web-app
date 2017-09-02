@@ -65,10 +65,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cart.aspx" />
-    <Content Include="DataProvider\InventoryDataProvider.xml" />
-    <Content Include="Inventory.aspx" />
-    <Content Include="Order.aspx" />
+    <Content Include="WebForm\Cart.aspx" />
+    <Content Include="DataProvider\InventoryDataProvider.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm\Inventory.aspx" />
+    <Content Include="WebForm\Order.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,25 +83,28 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cart.aspx.cs">
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="WebForm\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cart.aspx.designer.cs">
+    <Compile Include="WebForm\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.aspx.cs">
+    <Compile Include="Entities\Book.cs" />
+    <Compile Include="Entities\CartItem.cs" />
+    <Compile Include="WebForm\Inventory.aspx.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Inventory.aspx.designer.cs">
+    <Compile Include="WebForm\Inventory.aspx.designer.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Order.aspx.cs">
+    <Compile Include="WebForm\Order.aspx.cs">
       <DependentUpon>Order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Order.aspx.designer.cs">
+    <Compile Include="WebForm\Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
