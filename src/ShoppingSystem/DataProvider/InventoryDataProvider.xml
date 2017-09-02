@@ -1,39 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Bookstore>
   <Book>
-      <ISBN>10-000000-001</ISBN>
-      <Title>The Iliad and The Odyssey</Title>
-      <Price>112.95</Price>
-      <Quantity_Available>5</Quantity_Available> 
+    <ISBN>10-000000-001</ISBN>
+    <Title>The Iliad and The Odyssey</Title>
+    <Price>112.95</Price>
+    <Quantity_Available>2</Quantity_Available>
   </Book>
   <Book>
-       <ISBN>10-000000-999</ISBN>
-       <Title>Anthology of World Literature </Title>
-       <Price>124.95</Price>
-       <Quantity_Available>15</Quantity_Available>
+    <ISBN>10-000000-999</ISBN>
+    <Title>Anthology of World Literature </Title>
+    <Price>124.95</Price>
+    <Quantity_Available>14</Quantity_Available>
   </Book>
   <Book>
-      <ISBN>11-000000-002</ISBN>
-      <Title>Computer Dictionary</Title>
-      <Price>124.95</Price>
-      <Quantity_Available>0</Quantity_Available>
+    <ISBN>11-000000-002</ISBN>
+    <Title>Computer Dictionary</Title>
+    <Price>124.95</Price>
+    <Quantity_Available>10</Quantity_Available>
   </Book>
   <Book>
-      <ISBN>11-000000-003</ISBN>
-      <Title>Cooking on a Budget</Title>
-      <Price>123.95</Price>
-      <Quantity_Available>1</Quantity_Available>     
+    <ISBN>11-000000-003</ISBN>
+    <Title>Cooking on a Budget</Title>
+    <Price>123.95</Price>
+    <Quantity_Available>1</Quantity_Available>
   </Book>
   <Book>
-      <ISBN>11-000000-004</ISBN>
-      <Title>Great Works of Art</Title>
-      <Price>140</Price>
-      <Quantity_Available>4</Quantity_Available>
-   </Book>
+    <ISBN>11-000000-004</ISBN>
+    <Title>Great Works of Art</Title>
+    <Price>140</Price>
+    <Quantity_Available>5</Quantity_Available>
+  </Book>
   <Book>
     <ISBN>11-000000-005</ISBN>
     <Title>Compiler Design</Title>
     <Price>150</Price>
-    <Quantity_Available>4</Quantity_Available>
+    <Quantity_Available>6</Quantity_Available>
   </Book>
 </Bookstore>

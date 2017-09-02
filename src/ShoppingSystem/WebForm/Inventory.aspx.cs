@@ -32,7 +32,8 @@ namespace ShoppingSystem
         protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "ItemSelected")
-            {               
+            {
+                Btn_View_Cart.Enabled = true;
                 int rowIndex = Convert.ToInt32(e.CommandArgument);             
                 GridViewRow row = GridView_Inventory.Rows[rowIndex];
 

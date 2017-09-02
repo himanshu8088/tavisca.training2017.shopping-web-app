@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="ShoppingSystem.Inventory" %>
+﻿<%@ Page Language="C#"  MaintainScrollPositionOnPostback="true"  AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="ShoppingSystem.Inventory" %>
 
 <!DOCTYPE html>
 
@@ -34,7 +34,7 @@
                     </asp:TemplateField>
                 </Columns>                
             </asp:GridView>
-            <asp:Button style="margin:50px;" Text="View Cart" ID="Btn_View_Cart" runat="server" OnClick="Btn_View_Cart_Click" />
+            <asp:Button style="margin:50px;" Text="View Cart" ID="Btn_View_Cart" runat="server" OnClick="Btn_View_Cart_Click" Enabled="False" />
         </div>          
     </form>
 </body>

@@ -12,19 +12,27 @@ namespace ShoppingSystem
     public partial class Cart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {           
+        {
+            if (this.IsPostBack==false)
+            {
+                ViewState["pageLoaded"] = true;
                 using (DataTable dt = new DataTable())
                 {
                     dt.Columns.AddRange(new DataColumn[3] { new DataColumn("ISBN"), new DataColumn("Book"), new DataColumn("Price") });
                     int len = HttpContext.Current.Session.Count;
                     for (int i = 0; i < len; i++)
                     {
-                        CartItem item = HttpContext.Current.Session["i" + i] as CartItem;
-                        dt.Rows.Add(item.Book.Isbn, item.Book.Title, item.Price);
+                        if (HttpContext.Current.Session["i" + i] is CartItem)
+                        {
+                            CartItem item = HttpContext.Current.Session["i" + i] as CartItem;
+                            dt.Rows.Add(item.Book.Isbn, item.Book.Title, item.Price);
+                        }                        
                     }
                     GridView_Cart.DataSource = dt;
                     GridView_Cart.DataBind();
-                }                  
+                }
+            }
+                         
          
         }
 
@@ -37,8 +45,11 @@ namespace ShoppingSystem
             int len = HttpContext.Current.Session.Count;
             for (int i = 0; i < len; i++)
             {
-                item = HttpContext.Current.Session["i" + i] as CartItem;
-                amount += item.Price;
+                if (HttpContext.Current.Session["i" + i] is CartItem)
+                {
+                    item = HttpContext.Current.Session["i" + i] as CartItem;
+                    amount += item.Price;
+                }
             }
 
             Entities.Order order = new Entities.Order(Guid.NewGuid(), len, amount);
