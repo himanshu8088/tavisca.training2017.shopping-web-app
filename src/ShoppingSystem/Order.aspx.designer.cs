@@ -10,16 +10,16 @@
 namespace ShoppingSystem {
     
     
-    public partial class Default {
+    public partial class Order {
         
         /// <summary>
-        /// inventoryForm control.
+        /// orderForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm inventoryForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm orderForm;
         
         /// <summary>
         /// Lbl_header control.
@@ -31,30 +31,21 @@ namespace ShoppingSystem {
         protected global::System.Web.UI.WebControls.Label Lbl_header;
         
         /// <summary>
-        /// XmlDataSource control.
+        /// Lbl_Bill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource;
+        protected global::System.Web.UI.WebControls.Label Lbl_Bill;
         
         /// <summary>
-        /// GridView control.
+        /// Btn_Order control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
-        
-        /// <summary>
-        /// Btn_Add_To_Cart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Add_To_Cart;
+        protected global::System.Web.UI.WebControls.Button Btn_Order;
     }
 }

@@ -10,16 +10,16 @@
 namespace ShoppingSystem {
     
     
-    public partial class Purchase {
+    public partial class Cart {
         
         /// <summary>
-        /// orderForm control.
+        /// cartForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm orderForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm cartForm;
         
         /// <summary>
         /// Lbl_header control.
@@ -31,12 +31,21 @@ namespace ShoppingSystem {
         protected global::System.Web.UI.WebControls.Label Lbl_header;
         
         /// <summary>
-        /// Btn_Order control.
+        /// Lbl_Cart_Info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Order;
+        protected global::System.Web.UI.WebControls.Label Lbl_Cart_Info;
+        
+        /// <summary>
+        /// Btn_Generate_Bill control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Generate_Bill;
     }
 }

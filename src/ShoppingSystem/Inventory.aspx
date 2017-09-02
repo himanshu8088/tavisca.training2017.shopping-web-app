@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InventoryForm.aspx.cs" Inherits="ShoppingSystem.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="ShoppingSystem.Inventory" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="inventoryForm" runat="server" >
+     <form id="inventoryForm" runat="server" >
         <div style="display:flex; align-items:center; justify-content:space-between; flex-direction:column;">                
             <asp:Label style="margin-bottom:50px; margin-top:50px" ID="Lbl_header" runat="server" Text="Book Store" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" ForeColor="#000099"></asp:Label>            
             <asp:XmlDataSource ID="XmlDataSource" runat="server" DataFile="~/DataProvider/InventoryDataProvider.xml"></asp:XmlDataSource>
