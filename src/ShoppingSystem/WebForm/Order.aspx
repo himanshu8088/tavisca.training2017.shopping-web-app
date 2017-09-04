@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="ShoppingSystem.Order" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="ShoppingSystem.Order"  %>
 
 <!DOCTYPE html>
 
@@ -18,6 +18,7 @@
                  <asp:Label ID="Lbl_Amount" runat="server" ForeColor="#000066"></asp:Label>                 
              </div>  
              <asp:Button style="margin-bottom:50px; margin-top:50px"  ID="Btn_Order" runat="server" Text="Order" OnClick="Btn_Order_Click" /> 
+             <asp:Button style="margin-bottom:50px; margin-top:50px"  ID="Btn_Home" runat="server" Text="Back To Home" OnClick="Btn_Home_Click" /> 
         </div>
     </form>
 </body>

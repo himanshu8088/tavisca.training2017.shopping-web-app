@@ -57,13 +57,19 @@ namespace ShoppingSystem
                     }
                 }
                 bookstore.Save(file);
-                Response.Write("<script>alert(Order confirmed);</script>");
+                Response.Write("<script>alert('Order confirmed');</script>");
+                
             }
             catch (Exception ex)
             {
 
             }
 
+        }
+
+        protected void Btn_Home_Click(object sender, EventArgs e)
+        {            
+            Response.Redirect("~/WebForm/Inventory.aspx");
         }
     }
 }

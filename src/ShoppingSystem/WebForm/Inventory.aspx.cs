@@ -15,6 +15,7 @@ namespace ShoppingSystem
         {
             if (!IsPostBack)
             {
+                Session.Clear();
                 BindGrid();
             }
         }
