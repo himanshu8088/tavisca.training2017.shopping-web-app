@@ -40,12 +40,21 @@ namespace ShoppingSystem {
         protected global::System.Web.UI.WebControls.GridView GridView_Cart;
         
         /// <summary>
-        /// Btn_Generate_Bill control.
+        /// Lbl_Total_Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Generate_Bill;
+        protected global::System.Web.UI.WebControls.Label Lbl_Total_Price;
+        
+        /// <summary>
+        /// Btn_Order control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Order;
     }
 }

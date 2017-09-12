@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using ShoppingSystem.Entities;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ShoppingSystem
 {
@@ -22,34 +24,42 @@ namespace ShoppingSystem
 
         private void BindGrid()
         {
-            using (DataSet ds = new DataSet())
+            try
             {
-                ds.ReadXml(Server.MapPath("~/DataProvider/InventoryDataProvider.xml"));
-                GridView_Inventory.DataSource = ds;
-                GridView_Inventory.DataBind();
+                using (SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["BookStoreDBConn"].ToString()))
+                {
+                    var da = new SqlDataAdapter("select * from Books;", sqlConn);
+                    using (DataSet ds = new DataSet())
+                    {
+                        da.Fill(ds);
+                        GridView_Inventory.DataSource = ds;
+                        GridView_Inventory.DataBind();
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
 
         protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "ItemSelected")
             {
-                Btn_View_Cart.Enabled = true;
-                int rowIndex = Convert.ToInt32(e.CommandArgument);             
+                Btn_Checkout.Enabled = true;                
+                int rowIndex = Int32.Parse((string)e.CommandArgument); ;
                 GridViewRow row = GridView_Inventory.Rows[rowIndex];
-
-                string isbn = row.Cells[1].Text;
-                string title = row.Cells[2].Text;
-                decimal price = decimal.Parse(row.Cells[3].Text);
-
-                Book book = new Book(isbn, title);
-                int itemId = rowIndex + 1;
-                CartItem cart = new CartItem(itemId, book, price);
-                Session["i"+Session.Count] = cart;
+                int qty = 0;
+                int.TryParse(row.Cells[4].Text, out qty);
+                row.Cells[4].Text = "" + (qty + 1);
+                row.Cells[0].Text = row.Cells[1].Text;
+                Session["i" + row.Cells[0].Text] = row.Cells[4].Text;
             }
         }
 
-        protected void Btn_View_Cart_Click(object sender, EventArgs e)
+        protected void Btn_Checkout_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/WebForm/Cart.aspx");
         }

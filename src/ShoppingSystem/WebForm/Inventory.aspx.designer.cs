@@ -40,12 +40,12 @@ namespace ShoppingSystem {
         protected global::System.Web.UI.WebControls.GridView GridView_Inventory;
         
         /// <summary>
-        /// Btn_View_Cart control.
+        /// Btn_Checkout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_View_Cart;
+        protected global::System.Web.UI.WebControls.Button Btn_Checkout;
     }
 }
