@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="ShoppingSystem.Inventory" %>
+﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="ShoppingSystem.UILayer.Inventory" %>
 
 <!DOCTYPE html>
 
@@ -31,7 +31,7 @@
                             <asp:Label Text="0" runat="server" />
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Cart">
+                    <asp:TemplateField HeaderText="Cart" Visible="false">
                         <ItemTemplate>
                             <asp:Button Text="Add" runat="server" CommandName="ItemSelected" CommandArgument="<%# Container.DataItemIndex %>" />
                         </ItemTemplate>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShoppingSystem
+namespace ShoppingSystem.DataLayer.EFModel
 {
     using System;
     using System.Collections.Generic;

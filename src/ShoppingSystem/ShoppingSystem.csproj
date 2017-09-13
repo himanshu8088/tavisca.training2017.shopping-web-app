@@ -74,28 +74,28 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BookStore.Context.tt">
+    <Content Include="DataLayer\EFModel\BookStore.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BookStore.edmx</DependentUpon>
       <LastGenOutput>BookStore.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="BookStore.tt">
+    <Content Include="DataLayer\EFModel\BookStore.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BookStore.edmx</DependentUpon>
       <LastGenOutput>BookStore.cs</LastGenOutput>
     </Content>
-    <Content Include="WebForm\Cart.aspx" />
-    <Content Include="DataProvider\InventoryDataProvider.xml">
+    <Content Include="UILayer\WebForm\Cart.aspx" />
+    <Content Include="DataLayer\XmlData\Inventory.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebForm\Inventory.aspx" />
-    <Content Include="WebForm\Order.aspx" />
+    <Content Include="UILayer\WebForm\Inventory.aspx" />
+    <Content Include="UILayer\WebForm\Order.aspx" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="BookStore.edmx">
+    <EntityDeploy Include="DataLayer\EFModel\BookStore.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookStore.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="BookStore.edmx.diagram">
+    <Content Include="DataLayer\EFModel\BookStore.edmx.diagram">
       <DependentUpon>BookStore.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
@@ -109,54 +109,58 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs">
+    <Compile Include="BuisenessLayer\Manager\OrderManager.cs" />
+    <Compile Include="BuisenessLayer\Provider\BookProvider.cs" />
+    <Compile Include="BuisenessLayer\Manager\BookManager.cs" />
+    <Compile Include="BuisenessLayer\Constants.cs" />
+    <Compile Include="DataLayer\EFModel\Book.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookStore.Context.cs">
+    <Compile Include="DataLayer\EFModel\BookStore.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BookStore.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookStore.cs">
+    <Compile Include="DataLayer\EFModel\BookStore.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookStore.Designer.cs">
+    <Compile Include="DataLayer\EFModel\BookStore.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BookStore.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Order.cs" />
-    <Compile Include="Entities\OrderDetail.cs" />
-    <Compile Include="Order.cs">
-      <DependentUpon>BookStore.tt</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderDetail.cs">
+    <Compile Include="BuisenessLayer\Entities\Order.cs" />
+    <Compile Include="BuisenessLayer\Entities\OrderDetail.cs" />
+    <Compile Include="DataLayer\EFModel\Order.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Cart.aspx.cs">
+    <Compile Include="DataLayer\EFModel\OrderDetail.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UILayer\GridViewManager.cs" />
+    <Compile Include="UILayer\WebForm\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Cart.aspx.designer.cs">
+    <Compile Include="UILayer\WebForm\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Book.cs" />
-    <Compile Include="Entities\CartItem.cs" />
-    <Compile Include="WebForm\Inventory.aspx.cs">
+    <Compile Include="BuisenessLayer\Entities\Book.cs" />
+    <Compile Include="BuisenessLayer\Entities\CartItem.cs" />
+    <Compile Include="UILayer\WebForm\Inventory.aspx.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Inventory.aspx.designer.cs">
+    <Compile Include="UILayer\WebForm\Inventory.aspx.designer.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Order.aspx.cs">
+    <Compile Include="UILayer\WebForm\Order.aspx.cs">
       <DependentUpon>Order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Order.aspx.designer.cs">
+    <Compile Include="UILayer\WebForm\Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,6 +168,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

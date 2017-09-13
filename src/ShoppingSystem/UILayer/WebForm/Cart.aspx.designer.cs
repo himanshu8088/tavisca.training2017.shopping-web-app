@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShoppingSystem {
+namespace ShoppingSystem.UILayer {
     
     
     public partial class Cart {
