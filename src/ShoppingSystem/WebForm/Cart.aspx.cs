@@ -16,8 +16,8 @@ namespace ShoppingSystem
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<OrderDetail> orderDetails;
-            orderDetails = new List<OrderDetail>();
+            List<ShoppingSystem.Entities.OrderDetail> orderDetails;
+            orderDetails = new List<ShoppingSystem.Entities.OrderDetail>();
             decimal totalAmt = 0;
             if (this.IsPostBack == false)
             {
@@ -43,7 +43,7 @@ namespace ShoppingSystem
                                     var qty = int.Parse(Session[key].ToString());
                                     totalAmt += price;
 
-                                    orderDetails.Add(new OrderDetail(isbn, price, qty));
+                                    orderDetails.Add(new ShoppingSystem.Entities.OrderDetail(isbn, price, qty));
                                     dt.Rows.Add(row["BookTitle"], price, qty);
                                 }
                             }
@@ -77,7 +77,7 @@ namespace ShoppingSystem
                     SqlCommand cmd = new SqlCommand($"insert into Orders values('{orderId}','{orderDate}',{Session["TotalAmt"]});", sqlConn);
                     cmd.ExecuteNonQuery();
 
-                    var orders = Session["Order"] as List<OrderDetail>;
+                    var orders = Session["Order"] as List<ShoppingSystem.Entities.OrderDetail>;
                     foreach (var order in orders)
                     {
                         cmd = new SqlCommand($"insert into OrderDetails values('{orderId}','{order.PID}',{order.Qty},{order.Price});", sqlConn);
