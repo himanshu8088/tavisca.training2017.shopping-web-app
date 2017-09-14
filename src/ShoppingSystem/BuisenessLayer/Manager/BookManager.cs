@@ -10,24 +10,17 @@ namespace ShoppingSystem.BuisenessLayer
     {
         internal int Remove(string bookId)
         {
-            using (var ctx = new BookStoreDBEntities())
-            {                
-                var outBookOrdered = new System.Data.Entity.Core.Objects.ObjectParameter("bookCount", typeof(int));
-                ctx.IsBookOrdered(bookId, outBookOrdered);
-
-                var isBookOrdered = Convert.ToInt32(outBookOrdered.Value);
-                if (isBookOrdered == 1)
+            using (var entities = new BookStoreDBEntities())
+            {
+                if (IsBookOrdered(entities, bookId) == 1)
                     return Constants.ResultMsg.Fail;
                 else
                 {
-                    var books = from book in ctx.Books
-                                where book.BookId.Equals(bookId)
-                                select book;
-                    var bookObj = books.SingleOrDefault();
+                    var bookObj = GetBook(entities, bookId);
                     if (bookObj != null)
                     {
-                        ctx.Books.Remove(bookObj);
-                        ctx.SaveChanges();
+                        entities.Books.Remove(bookObj);
+                        entities.SaveChanges();
                     }
                     return Constants.ResultMsg.Pass;
                 }
@@ -36,42 +29,67 @@ namespace ShoppingSystem.BuisenessLayer
 
         internal void Add(string bookId, string bookTitle, decimal price)
         {
-            using (var ctx = new BookStoreDBEntities())
-            {               
-                var book = new Book();
-                book.BookId = bookId;
-                book.BookTitle = bookTitle;
-                book.Price = price;
-                ctx.Books.Add(book);
-                ctx.SaveChanges();              
+            using (var entities = new BookStoreDBEntities())
+            {
+                if (IsBookExists(entities, bookId) == false)
+                {
+                    var book = CreateBook(bookId, bookTitle, price);
+                    entities.Books.Add(book);
+                    entities.SaveChanges();
+                }
             }
+        }
+
+        private bool IsBookExists(BookStoreDBEntities entities, string bookId)
+        {
+            var bookCount = (from book in entities.Books
+                             where book.BookId.Equals(bookId)
+                             select book )
+                             .Count();            
+            if (bookCount == 0)
+                return false;
+            return true;
+        }
+
+        private Book CreateBook(string bookId, string bookTitle, decimal price)
+        {
+            var book = new Book();
+            book.BookId = bookId;
+            book.BookTitle = bookTitle;
+            book.Price = price;
+            return book;
+        }
+
+        private int IsBookOrdered(BookStoreDBEntities entities, string bookId)
+        {
+            var outBookOrdered = new System.Data.Entity.Core.Objects.ObjectParameter("bookCount", typeof(int));
+            entities.IsBookOrdered(bookId, outBookOrdered);
+            return Convert.ToInt32(outBookOrdered.Value);
+        }
+
+        private Book GetBook(BookStoreDBEntities entities, string bookId)
+        {
+            var books = from book in entities.Books
+                        where book.BookId.Equals(bookId)
+                        select book;
+            return books.SingleOrDefault();
         }
 
         internal int Update(string bookId, string bookTitle, decimal price)
         {
-            using (var ctx = new BookStoreDBEntities())
+            using (var entities = new BookStoreDBEntities())
             {
-                var outBookOrdered = new System.Data.Entity.Core.Objects.ObjectParameter("bookCount", typeof(int));
-                ctx.IsBookOrdered(bookId, outBookOrdered);
-
-                var isBookOrdered = Convert.ToInt32(outBookOrdered.Value);
-                if (isBookOrdered == 1)
+                if (IsBookOrdered(entities, bookId) == 1)
                     return Constants.ResultMsg.Fail;
                 else
                 {
-                    var books = from book in ctx.Books
-                                where book.BookId.Equals(bookId)
-                                select book;
-                    var bookObj = books.SingleOrDefault();
+                    var bookObj = GetBook(entities, bookId);
                     if (bookObj != null)
                     {
-                        ctx.Books.Remove(bookObj);
-                        var book = new Book();
-                        book.BookId = bookId;
-                        book.BookTitle = bookTitle;
-                        book.Price = price;
-                        ctx.Books.Add(book);
-                        ctx.SaveChanges();
+                        entities.Books.Remove(bookObj);
+                        var book = CreateBook(bookId, bookTitle, price);
+                        entities.Books.Add(book);
+                        entities.SaveChanges();
                     }
                     return Constants.ResultMsg.Pass;
                 }
