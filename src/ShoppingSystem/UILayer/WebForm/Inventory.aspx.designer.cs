@@ -7,8 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShoppingSystem.UILayer
-{
+namespace ShoppingSystem.UILayer {
     
     
     public partial class Inventory {
@@ -66,6 +65,15 @@ namespace ShoppingSystem.UILayer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_Manage;
+        
+        /// <summary>
+        /// Lbl_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_Status;
         
         /// <summary>
         /// AddItemPanel control.
@@ -219,5 +227,14 @@ namespace ShoppingSystem.UILayer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_Remove_From_Inventory;
+        
+        /// <summary>
+        /// Btn_Update_Inventory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Update_Inventory;
     }
 }

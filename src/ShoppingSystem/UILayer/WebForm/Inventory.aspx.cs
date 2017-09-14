@@ -57,14 +57,14 @@ namespace ShoppingSystem.UILayer
         }
 
         protected void Btn_Shop_Click(object sender, EventArgs e)
-        {            
+        {
             ResetPanelVisibility();
             GridView_Inventory.Columns[5].Visible = true;
             ShoppingControlPanel.Visible = true;
         }
 
         protected void Btn_Manage_Click(object sender, EventArgs e)
-        {            
+        {
             ResetPanelVisibility();
             InventoryUpdatePanel.Visible = true;
         }
@@ -81,22 +81,40 @@ namespace ShoppingSystem.UILayer
             RemoveItemPanel.Visible = true;
         }
 
+        protected void Btn_Update_Inventory_Click(object sender, EventArgs e)
+        {
+            ResetPanelVisibility();
+            Btn_Add.Text = "Update";
+            AddItemPanel.Visible = true;
+        }
+
         protected void Btn_Add_Click(object sender, EventArgs e)
         {
-            _bookManager.Add(Txt_Isbn1.Text, Txt_Title.Text, decimal.Parse(Txt_Price.Text));
+            if (Btn_Add.Text.Equals("Add"))
+            {
+                _bookManager.Add(Txt_Isbn1.Text, Txt_Title.Text, decimal.Parse(Txt_Price.Text));
+            }
+            else
+            {
+                int statusCode = _bookManager.Update(Txt_Isbn1.Text, Txt_Title.Text, decimal.Parse(Txt_Price.Text));
+                if (statusCode == BuisenessLayer.Constants.ResultMsg.Fail)
+                    ShowStatus(Constants.ErrorMsg.UpdateFail);
+            }
+
             LoadGrid();
         }
 
         protected void Btn_Remove_Click(object sender, EventArgs e)
         {
             int statusCode = _bookManager.Remove(Txt_Isbn2.Text);
-            if (statusCode == Constants.ResponseMsg.NotRemoved)
-                Response.Write("<script>alert('Sorry can not delete. It is present in order history');</script>");
-            else
-            {
-                LoadGrid();
-            }
+            if (statusCode == BuisenessLayer.Constants.ResultMsg.Fail)
+                ShowStatus(Constants.ErrorMsg.DeleteFail);
+            LoadGrid();
+        }
 
+        private void ShowStatus(string msg)
+        {
+            Lbl_Status.Text = msg;           
         }
 
         private void ResetPanelVisibility()
@@ -106,6 +124,10 @@ namespace ShoppingSystem.UILayer
             AddItemPanel.Visible = false;
             RemoveItemPanel.Visible = false;
             GridView_Inventory.Columns[5].Visible = false;
+            Btn_Add.Text = "Add";
+            Lbl_Status.Text = "";
         }
+
+
     }
 }

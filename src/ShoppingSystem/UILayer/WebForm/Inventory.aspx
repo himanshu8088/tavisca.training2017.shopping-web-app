@@ -44,6 +44,8 @@
                 <asp:Button Style="margin: 20px;" Text="Manage" ID="Btn_Manage" runat="server" OnClick="Btn_Manage_Click" />
             </asp:Panel>
 
+            <asp:Label id="Lbl_Status" runat="server"></asp:Label>
+
             <asp:Panel ID="AddItemPanel" runat="server" Style="margin: 20px;" Visible="false">
                 <asp:Label ID="Lbl_Isbn1" runat="server" Text="ISBN"></asp:Label>
                 <asp:TextBox ID="Txt_Isbn1" runat="server"></asp:TextBox>
@@ -69,6 +71,7 @@
             <asp:Panel ID="InventoryUpdatePanel" runat="server" Style="margin: 20px;" Visible="false">
                 <asp:Button Style="margin: 20px;" Text="Add To Inventory" ID="Btn_Add_To_Inventory" runat="server" OnClick="Btn_Add_To_Inventory_Click" />
                 <asp:Button Style="margin: 20px;" Text="Remove From Inventory" ID="Btn_Remove_From_Inventory" runat="server" OnClick="Btn_Remove_From_Inventory_Click" />
+                <asp:Button Style="margin: 20px;" Text="Update Inventory" ID="Btn_Update_Inventory" runat="server" OnClick="Btn_Update_Inventory_Click" />                
             </asp:Panel>
 
         </div>

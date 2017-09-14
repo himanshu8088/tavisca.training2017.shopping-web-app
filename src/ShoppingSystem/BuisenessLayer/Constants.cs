@@ -7,10 +7,10 @@ namespace ShoppingSystem.BuisenessLayer
 {
     public class Constants
     {        
-        public static class ResponseMsg
+        public static class ResultMsg
         {
-            public static readonly int Removed = 0;
-            public static readonly int NotRemoved = 1;
+            public static readonly int Pass = 1;
+            public static readonly int Fail = 0;
         }
     }
 }

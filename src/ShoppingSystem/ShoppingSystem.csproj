@@ -139,6 +139,7 @@
     <Compile Include="DataLayer\EFModel\OrderDetail.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="UILayer\Constants.cs" />
     <Compile Include="UILayer\GridViewManager.cs" />
     <Compile Include="UILayer\WebForm\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
