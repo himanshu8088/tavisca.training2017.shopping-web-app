@@ -27,76 +27,83 @@ namespace ShoppingSystem.UILayer
 
         private void LoadGrid()
         {
-            var ds = _provider.GetAll();
-            _viewManager.BindGrid(GridView_Inventory, ds);
+            try
+            {
+                var ds = _provider.GetAll();
+                _viewManager.BindGrid(gridViewInventory, ds);
+            }
+            catch(Exception e)
+            {
+                Response.Write("<script>alert("+e.Message+");</script>");
+            }                        
         }
 
-        protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridViewRowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "ItemSelected")
+            if (e.CommandName == "getItemRow")
             {
-                Btn_Checkout.Enabled = true;
+                btnCheckout.Enabled = true;
                 int rowIndex = Int32.Parse((string)e.CommandArgument);
                 int qty = 0;
 
-                string qtyVal = _viewManager.GetValue(GridView_Inventory, rowIndex, 4);
+                string qtyVal = _viewManager.GetValue(gridViewInventory, rowIndex, 4);
                 int.TryParse(qtyVal, out qty);
                 qty = (qty + 1);
-                _viewManager.SetValue(GridView_Inventory, rowIndex, 4, qty.ToString());
+                _viewManager.SetValue(gridViewInventory, rowIndex, 4, qty.ToString());
 
-                string isbnVal = _viewManager.GetValue(GridView_Inventory, rowIndex, 1);
-                _viewManager.SetValue(GridView_Inventory, rowIndex, 0, isbnVal);
+                string isbnVal = _viewManager.GetValue(gridViewInventory, rowIndex, 1);
+                _viewManager.SetValue(gridViewInventory, rowIndex, 0, isbnVal);
 
                 Session["i" + isbnVal] = qty;
             }
         }
 
-        protected void Btn_Checkout_Click(object sender, EventArgs e)
+        protected void BtnCheckoutClick(object sender, EventArgs e)
         {
             Response.Redirect("~/UILayer/WebForm/Cart.aspx");
         }
 
-        protected void Btn_Shop_Click(object sender, EventArgs e)
+        protected void BtnShopClick(object sender, EventArgs e)
         {
             ResetPanelVisibility();
-            GridView_Inventory.Columns[5].Visible = true;
+            gridViewInventory.Columns[5].Visible = true;
             ShoppingControlPanel.Visible = true;
         }
 
-        protected void Btn_Manage_Click(object sender, EventArgs e)
+        protected void BtnManageClick(object sender, EventArgs e)
         {
             ResetPanelVisibility();
-            InventoryUpdatePanel.Visible = true;
+            inventoryUpdatePanel.Visible = true;
         }
 
-        protected void Btn_Add_To_Inventory_Click(object sender, EventArgs e)
+        protected void BtnAddToInventoryClick(object sender, EventArgs e)
         {
             ResetPanelVisibility();
-            AddItemPanel.Visible = true;
+            addItemPanel.Visible = true;
         }
 
-        protected void Btn_Remove_From_Inventory_Click(object sender, EventArgs e)
+        protected void BtnRemoveFromInventoryClick(object sender, EventArgs e)
         {
             ResetPanelVisibility();
-            RemoveItemPanel.Visible = true;
+            removeItemPanel.Visible = true;
         }
 
-        protected void Btn_Update_Inventory_Click(object sender, EventArgs e)
+        protected void BtnUpdateInventoryClick(object sender, EventArgs e)
         {
             ResetPanelVisibility();
-            Btn_Add.Text = "Update";
-            AddItemPanel.Visible = true;
+            btnAdd.Text = "Update";
+            addItemPanel.Visible = true;
         }
 
-        protected void Btn_Add_Click(object sender, EventArgs e)
+        protected void BtnAddClick(object sender, EventArgs e)
         {
-            if (Btn_Add.Text.Equals("Add"))
+            if (btnAdd.Text.Equals("Add"))
             {
-                _bookManager.Add(Txt_Isbn1.Text, Txt_Title.Text, decimal.Parse(Txt_Price.Text));
+                _bookManager.Add(txtIsbn1.Text, txtTitle.Text, decimal.Parse(txtPrice.Text));
             }
             else
             {
-                int statusCode = _bookManager.Update(Txt_Isbn1.Text, Txt_Title.Text, decimal.Parse(Txt_Price.Text));
+                int statusCode = _bookManager.Update(txtIsbn1.Text, txtTitle.Text, decimal.Parse(txtPrice.Text));
                 if (statusCode == BuisenessLayer.Constants.ResultMsg.Fail)
                     ShowStatus(Constants.ErrorMsg.UpdateFail);
             }
@@ -104,9 +111,9 @@ namespace ShoppingSystem.UILayer
             LoadGrid();
         }
 
-        protected void Btn_Remove_Click(object sender, EventArgs e)
+        protected void BtnRemoveClick(object sender, EventArgs e)
         {
-            int statusCode = _bookManager.Remove(Txt_Isbn2.Text);
+            int statusCode = _bookManager.Remove(txtIsbn2.Text);
             if (statusCode == BuisenessLayer.Constants.ResultMsg.Fail)
                 ShowStatus(Constants.ErrorMsg.DeleteFail);
             LoadGrid();
@@ -114,20 +121,18 @@ namespace ShoppingSystem.UILayer
 
         private void ShowStatus(string msg)
         {
-            Lbl_Status.Text = msg;           
+            lblStatus.Text = msg;           
         }
 
         private void ResetPanelVisibility()
         {
             ShoppingControlPanel.Visible = false;
-            InventoryUpdatePanel.Visible = false;
-            AddItemPanel.Visible = false;
-            RemoveItemPanel.Visible = false;
-            GridView_Inventory.Columns[5].Visible = false;
-            Btn_Add.Text = "Add";
-            Lbl_Status.Text = "";
-        }
-
-
+            inventoryUpdatePanel.Visible = false;
+            addItemPanel.Visible = false;
+            removeItemPanel.Visible = false;
+            gridViewInventory.Columns[5].Visible = false;
+            btnAdd.Text = "Add";
+            lblStatus.Text = "";
+        }        
     }
 }

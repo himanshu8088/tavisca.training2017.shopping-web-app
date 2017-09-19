@@ -22,13 +22,13 @@ namespace ShoppingSystem.UILayer {
         protected global::System.Web.UI.HtmlControls.HtmlForm cartForm;
         
         /// <summary>
-        /// Lbl_header control.
+        /// lblheader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_header;
+        protected global::System.Web.UI.WebControls.Label lblheader;
         
         /// <summary>
         /// GridView_Cart control.
@@ -40,21 +40,21 @@ namespace ShoppingSystem.UILayer {
         protected global::System.Web.UI.WebControls.GridView GridView_Cart;
         
         /// <summary>
-        /// Lbl_Total_Price control.
+        /// lblTotalPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Total_Price;
+        protected global::System.Web.UI.WebControls.Label lblTotalPrice;
         
         /// <summary>
-        /// Btn_Order control.
+        /// btnOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Order;
+        protected global::System.Web.UI.WebControls.Button btnOrder;
     }
 }

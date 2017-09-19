@@ -11,42 +11,51 @@ namespace ShoppingSystem.BuisenessLayer.Provider
     public class BookProvider
     {
         internal DataSet GetAll()
-        {            
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter da=null;
+            SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["BookStoreDBConn"].ToString());
             try
-            {
-                using (SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["BookStoreDBConn"].ToString()))
-                {
-                    SqlDataAdapter da = new SqlDataAdapter("select * from Books;", sqlConn);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds);
-                    return ds;
-                }
+            {               
+                sqlConn.Open();
+                da= new SqlDataAdapter("select * from Books;", sqlConn);
+                da.Fill(ds);                
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-
+                throw new Exception("Can not get itinerary.");
             }
-            throw new Exception();
+            finally
+            {
+                da.Dispose();
+                sqlConn.Close();
+            }
+            return ds;
         }
 
         internal DataSet GetBookTiltle_Price(string isbn)
         {
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter da = null;
+            SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["BookStoreDBConn"].ToString());
             try
-            {
-                using (SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["BookStoreDBConn"].ToString()))
-                {
-                   
-                    var da = new SqlDataAdapter($"select BookTitle, Price from Books where BookId='{isbn}';", sqlConn);
-                    DataSet dataSet = new DataSet();
-                    da.Fill(dataSet, "Books");
-                    return dataSet;
-                }
+            {                
+                sqlConn.Open();
+                da = new SqlDataAdapter($"select BookTitle, Price from Books where BookId='{isbn}';", sqlConn);
+                da.Fill(dataSet, "Books");
+                da.Dispose();
+                sqlConn.Close();
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-
+                throw new Exception("Can not get itinerary.");
             }
-            throw new Exception();
+            finally
+            {
+                da.Dispose();
+                sqlConn.Close();
+            }
+            return dataSet;
         }
     }
 }

@@ -22,166 +22,166 @@ namespace ShoppingSystem.UILayer {
         protected global::System.Web.UI.HtmlControls.HtmlForm inventoryForm;
         
         /// <summary>
-        /// Lbl_header control.
+        /// LblHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_header;
+        protected global::System.Web.UI.WebControls.Label LblHeader;
         
         /// <summary>
-        /// GridView_Inventory control.
+        /// gridViewInventory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_Inventory;
+        protected global::System.Web.UI.WebControls.GridView gridViewInventory;
         
         /// <summary>
-        /// ChoiceControlPanel control.
+        /// choiceControlPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ChoiceControlPanel;
+        protected global::System.Web.UI.WebControls.Panel choiceControlPanel;
         
         /// <summary>
-        /// Btn_Shop control.
+        /// btnShop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Shop;
+        protected global::System.Web.UI.WebControls.Button btnShop;
         
         /// <summary>
-        /// Btn_Manage control.
+        /// btnManage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Manage;
+        protected global::System.Web.UI.WebControls.Button btnManage;
         
         /// <summary>
-        /// Lbl_Status control.
+        /// lblStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Status;
+        protected global::System.Web.UI.WebControls.Label lblStatus;
         
         /// <summary>
-        /// AddItemPanel control.
+        /// addItemPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AddItemPanel;
+        protected global::System.Web.UI.WebControls.Panel addItemPanel;
         
         /// <summary>
-        /// Lbl_Isbn1 control.
+        /// lblIsbn1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Isbn1;
+        protected global::System.Web.UI.WebControls.Label lblIsbn1;
         
         /// <summary>
-        /// Txt_Isbn1 control.
+        /// txtIsbn1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_Isbn1;
+        protected global::System.Web.UI.WebControls.TextBox txtIsbn1;
         
         /// <summary>
-        /// Lbl_Title control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Title;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
-        /// Txt_Title control.
+        /// txtTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_Title;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// Lbl_Price control.
+        /// lblPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Price;
+        protected global::System.Web.UI.WebControls.Label lblPrice;
         
         /// <summary>
-        /// Txt_Price control.
+        /// txtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_Price;
+        protected global::System.Web.UI.WebControls.TextBox txtPrice;
         
         /// <summary>
-        /// Btn_Add control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Add;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
-        /// RemoveItemPanel control.
+        /// removeItemPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel RemoveItemPanel;
+        protected global::System.Web.UI.WebControls.Panel removeItemPanel;
         
         /// <summary>
-        /// Lbl_Isbn2 control.
+        /// lblIsbn2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_Isbn2;
+        protected global::System.Web.UI.WebControls.Label lblIsbn2;
         
         /// <summary>
-        /// Txt_Isbn2 control.
+        /// txtIsbn2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_Isbn2;
+        protected global::System.Web.UI.WebControls.TextBox txtIsbn2;
         
         /// <summary>
-        /// Btn_Remove control.
+        /// btnRemove control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Remove;
+        protected global::System.Web.UI.WebControls.Button btnRemove;
         
         /// <summary>
         /// ShoppingControlPanel control.
@@ -193,48 +193,48 @@ namespace ShoppingSystem.UILayer {
         protected global::System.Web.UI.WebControls.Panel ShoppingControlPanel;
         
         /// <summary>
-        /// Btn_Checkout control.
+        /// btnCheckout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Checkout;
+        protected global::System.Web.UI.WebControls.Button btnCheckout;
         
         /// <summary>
-        /// InventoryUpdatePanel control.
+        /// inventoryUpdatePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InventoryUpdatePanel;
+        protected global::System.Web.UI.WebControls.Panel inventoryUpdatePanel;
         
         /// <summary>
-        /// Btn_Add_To_Inventory control.
+        /// btnAddToInventory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Add_To_Inventory;
+        protected global::System.Web.UI.WebControls.Button btnAddToInventory;
         
         /// <summary>
-        /// Btn_Remove_From_Inventory control.
+        /// btnRemoveFromInventory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Remove_From_Inventory;
+        protected global::System.Web.UI.WebControls.Button btnRemoveFromInventory;
         
         /// <summary>
-        /// Btn_Update_Inventory control.
+        /// btnUpdateInventory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Update_Inventory;
+        protected global::System.Web.UI.WebControls.Button btnUpdateInventory;
     }
 }

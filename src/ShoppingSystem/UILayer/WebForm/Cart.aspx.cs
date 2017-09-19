@@ -32,15 +32,15 @@ namespace ShoppingSystem.UILayer
                 ViewState["pageLoaded"] = true;
                 using (DataTable dt = new DataTable())
                 {
-                    try
+                    dt.Columns.AddRange(new DataColumn[3] { new DataColumn("BookTitle"), new DataColumn("Price"), new DataColumn("Quantity") });
+                    foreach (string key in Session.Keys)
                     {
-                        dt.Columns.AddRange(new DataColumn[3] { new DataColumn("BookTitle"), new DataColumn("Price"), new DataColumn("Quantity") });
-                        foreach (string key in Session.Keys)
+                        if (key.StartsWith("i") && key.Length > 1)
                         {
-                            if (key.StartsWith("i") && key.Length > 1)
-                            {
-                                string isbn = key.Substring(1, key.Length - 1);
+                            string isbn = key.Substring(1, key.Length - 1);
 
+                            try
+                            {
                                 var ds = _bookProvider.GetBookTiltle_Price(isbn);
                                 var price = _orderManager.GetPrice(ds);
                                 var title = _orderManager.GetTitle(ds);
@@ -50,31 +50,36 @@ namespace ShoppingSystem.UILayer
 
                                 orderDetails.Add(new ShoppingSystem.Entities.OrderDetail(isbn, price, qty));
                                 dt.Rows.Add(title, price, qty);
+                            }catch(Exception ex)
+                            {
+                                Response.Write("<script>alert(" + ex.Message + ");</script>");
                             }
+                            
                         }
-
                     }
-                    catch (Exception ex)
-                    {
-
-                    }
-
                     _viewManager.BindGrid(GridView_Cart, dt);
-                    Lbl_Total_Price.Text = $"Total Amount = {totalAmt}";
+                    lblTotalPrice.Text = $"Total Amount = {totalAmt}";
                     Session["TotalAmt"] = totalAmt;
                     Session["Order"] = orderDetails;
-                    Btn_Order.Enabled = true;
+                    btnOrder.Enabled = true;
                 }
             }
         }
-        protected void Btn_Order_Click(object sender, EventArgs e)
-        {
+        protected void BtnOrderClick(object sender, EventArgs e)
+        {           
             var orders = Session["Order"] as List<ShoppingSystem.Entities.OrderDetail>;
             var orderAmt = Session["TotalAmt"];
             OrderManager manager = new OrderManager();
-            manager.Save(orders, orderAmt.ToString());
-            Response.Write("<script>alert('Order confirmed');</script>");
-            Btn_Order.Enabled = false;
+            try
+            {
+                manager.Save(orders, orderAmt.ToString());
+                Response.Write("<script>alert('Order confirmed');</script>");
+                btnOrder.Enabled = false;
+            }catch(Exception ex)
+            {
+                Response.Write("<script>alert(" + ex.Message + ");</script>");
+            }
+            
         }
 
     }

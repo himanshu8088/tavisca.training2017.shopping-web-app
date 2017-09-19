@@ -9,8 +9,8 @@
 <body>
     <form id="inventoryForm" runat="server">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-direction: column;">
-            <asp:Label Style="margin-bottom: 50px; margin-top: 50px" ID="Lbl_header" runat="server" Text="Book Store" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" ForeColor="#000099"></asp:Label>
-            <asp:GridView ID="GridView_Inventory" OnRowCommand="GridView_RowCommand"
+            <asp:Label Style="margin-bottom: 50px; margin-top: 50px" ID="LblHeader" runat="server" Text="Book Store" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" ForeColor="#000099"></asp:Label>
+            <asp:GridView ID="gridViewInventory" OnRowCommand="GridViewRowCommand"
                 HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White"
                 RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White"
                 AlternatingRowStyle-ForeColor="#000"
@@ -33,45 +33,45 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Cart" Visible="false">
                         <ItemTemplate>
-                            <asp:Button Text="Add" runat="server" CommandName="ItemSelected" CommandArgument="<%# Container.DataItemIndex %>" />
+                            <asp:Button Text="Add" runat="server" CommandName="getItemRow" CommandArgument="<%# Container.DataItemIndex %>" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
 
-            <asp:Panel ID="ChoiceControlPanel" runat="server" Style="margin: 20px;">
-                <asp:Button Style="margin: 20px;" Text="Shop" ID="Btn_Shop" runat="server" OnClick="Btn_Shop_Click" />
-                <asp:Button Style="margin: 20px;" Text="Manage" ID="Btn_Manage" runat="server" OnClick="Btn_Manage_Click" />
+            <asp:Panel ID="choiceControlPanel" runat="server" Style="margin: 20px;">
+                <asp:Button Style="margin: 20px;" Text="Shop" ID="btnShop" runat="server" OnClick="BtnShopClick" />
+                <asp:Button Style="margin: 20px;" Text="Manage" ID="btnManage" runat="server" OnClick="BtnManageClick" />
             </asp:Panel>
 
-            <asp:Label id="Lbl_Status" runat="server"></asp:Label>
+            <asp:Label id="lblStatus" runat="server"></asp:Label>
 
-            <asp:Panel ID="AddItemPanel" runat="server" Style="margin: 20px;" Visible="false">
-                <asp:Label ID="Lbl_Isbn1" runat="server" Text="ISBN"></asp:Label>
-                <asp:TextBox ID="Txt_Isbn1" runat="server"></asp:TextBox>
+            <asp:Panel ID="addItemPanel" runat="server" Style="margin: 20px;" Visible="false">
+                <asp:Label ID="lblIsbn1" runat="server" Text="ISBN"></asp:Label>
+                <asp:TextBox ID="txtIsbn1" runat="server"></asp:TextBox>
 
-                <asp:Label ID="Lbl_Title" runat="server" Text="Book Title"></asp:Label>
-                <asp:TextBox ID="Txt_Title" runat="server"></asp:TextBox>
+                <asp:Label ID="lblTitle" runat="server" Text="Book Title"></asp:Label>
+                <asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
 
-                <asp:Label ID="Lbl_Price" runat="server" Text="Price"></asp:Label>
-                <asp:TextBox ID="Txt_Price" runat="server"></asp:TextBox>
-                <asp:Button ID="Btn_Add" runat="server" Text="Add" OnClick="Btn_Add_Click" />
+                <asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label>
+                <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="BtnAddClick" />
             </asp:Panel>
 
-            <asp:Panel ID="RemoveItemPanel" runat="server" Style="margin: 20px;" Visible="false">
-                <asp:Label ID="Lbl_Isbn2" runat="server" Text="ISBN"></asp:Label>
-                <asp:TextBox ID="Txt_Isbn2" runat="server"></asp:TextBox>
-                <asp:Button ID="Btn_Remove" runat="server" Text="Remove" OnClick="Btn_Remove_Click" />
+            <asp:Panel ID="removeItemPanel" runat="server" Style="margin: 20px;" Visible="false">
+                <asp:Label ID="lblIsbn2" runat="server" Text="ISBN"></asp:Label>
+                <asp:TextBox ID="txtIsbn2" runat="server"></asp:TextBox>
+                <asp:Button ID="btnRemove" runat="server" Text="Remove" OnClick="BtnRemoveClick" />
             </asp:Panel>
 
             <asp:Panel ID="ShoppingControlPanel" runat="server" Style="margin: 20px;" Visible="false">
-                <asp:Button Style="margin: 20px;" Text="Checkout" ID="Btn_Checkout" runat="server" OnClick="Btn_Checkout_Click" Enabled="False" />
+                <asp:Button Style="margin: 20px;" Text="Checkout" ID="btnCheckout" runat="server" OnClick="BtnCheckoutClick" Enabled="False" />
             </asp:Panel>
 
-            <asp:Panel ID="InventoryUpdatePanel" runat="server" Style="margin: 20px;" Visible="false">
-                <asp:Button Style="margin: 20px;" Text="Add To Inventory" ID="Btn_Add_To_Inventory" runat="server" OnClick="Btn_Add_To_Inventory_Click" />
-                <asp:Button Style="margin: 20px;" Text="Remove From Inventory" ID="Btn_Remove_From_Inventory" runat="server" OnClick="Btn_Remove_From_Inventory_Click" />
-                <asp:Button Style="margin: 20px;" Text="Update Inventory" ID="Btn_Update_Inventory" runat="server" OnClick="Btn_Update_Inventory_Click" />                
+            <asp:Panel ID="inventoryUpdatePanel" runat="server" Style="margin: 20px;" Visible="false">
+                <asp:Button Style="margin: 20px;" Text="Add To Inventory" ID="btnAddToInventory" runat="server" OnClick="BtnAddToInventoryClick" />
+                <asp:Button Style="margin: 20px;" Text="Remove From Inventory" ID="btnRemoveFromInventory" runat="server" OnClick="BtnRemoveFromInventoryClick" />
+                <asp:Button Style="margin: 20px;" Text="Update Inventory" ID="btnUpdateInventory" runat="server" OnClick="BtnUpdateInventoryClick" />                
             </asp:Panel>
 
         </div>

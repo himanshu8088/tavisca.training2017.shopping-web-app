@@ -89,7 +89,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="UILayer\WebForm\Inventory.aspx" />
-    <Content Include="UILayer\WebForm\Order.aspx" />
     <Content Include="packages.config" />
     <EntityDeploy Include="DataLayer\EFModel\BookStore.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -156,13 +155,6 @@
     </Compile>
     <Compile Include="UILayer\WebForm\Inventory.aspx.designer.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UILayer\WebForm\Order.aspx.cs">
-      <DependentUpon>Order.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UILayer\WebForm\Order.aspx.designer.cs">
-      <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
